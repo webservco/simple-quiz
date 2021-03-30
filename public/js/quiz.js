@@ -53,7 +53,7 @@ var quiz = (function() {
             // The result HMML element.
             var resultElement = quizElement.querySelector('div.quiz-result')
             // The HTML elementw hich will display the selected answer.
-            var resultAnswer = resultElement.querySelector('span.quiz-answer')
+            var resultAnswer = resultElement.querySelector('strong.quiz-answer')
 
             // Iterate answer button list.
             answerButtonList.forEach(function(answerButton) {
@@ -68,7 +68,7 @@ var quiz = (function() {
                     // Set answered button as active.
                     event.target.classList.add('active')
                     // Set the selected answer value to display.
-                    resultAnswer.textContent = answer
+                    resultAnswer.textContent = event.target.textContent
                     // Show the result HTML element.
                     resultElement.style.display = 'block'
                     // Set the "sent" flag.
