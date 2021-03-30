@@ -18,7 +18,7 @@ var SimpleQuiz = (function() {
                 ).then(
                     response => response.json(),
                     reject => {
-                        // Log the error
+                        // Log the error.
                         console.log(reject);
                     }
                 ).then(
@@ -48,7 +48,7 @@ var SimpleQuiz = (function() {
         // argument: "url" (optional), an external address where to send the result.
         // argument: "callback" (optional) a callback which handles the result of external address call
         handle: function(elementId, url, callback) {
-            // "sent" flag, prevents answering multiple times
+            // "sent" flag, prevents answering multiple times.
             var sent = false
             // The quiz HTML element.
             var quizElement = document.getElementById(elementId)
