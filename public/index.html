@@ -20,14 +20,14 @@
             <div class="card-body">
                 <p class="card-text">Quiz description</p>
                 <ul class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action" data-answer="a" role="button">a) Option One</a>
-                    <a class="list-group-item list-group-item-action" data-answer="b" role="button">b) Option Two</a>
-                    <a class="list-group-item list-group-item-action" data-answer="c" role="button">c) Option Three</a>
+                    <a class="list-group-item list-group-item-action" data-answer="a" role="button">Lorem</a>
+                    <a class="list-group-item list-group-item-action" data-answer="b" role="button">Ipsum</a>
+                    <a class="list-group-item list-group-item-action" data-answer="c" role="button">Dolor</a>
                 </ul>
             </div>
         </div>
         <div class="quiz-result mt-4" style="display: none;">
-            <p class="lead">Your answer: <span class="quiz-answer"></span></p>
+            <p class="lead">Your answer: "<strong class="quiz-answer"></strong>"</p>
             <p>
                 The correct answer is: ...
             </p>
@@ -46,8 +46,8 @@
         (function() {
             window.addEventListener('load', function () {
                 // Call functionality
-                //quiz.handle('quiz1');
-                quiz.handle('quiz1', 'https://ingraduland.webserv.co/api');
+                quiz.handle('quiz1');
+                //quiz.handle('quiz1', 'https://ingraduland.webserv.co/api');
             });
         })();
         //]]>
