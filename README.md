@@ -1,5 +1,7 @@
 # SimpleQuiz
 
+Simple JavaScipt quiz functionality.
+
 ---
 
 ## Development
