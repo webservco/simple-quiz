@@ -1,4 +1,24 @@
 {
+  "name": "@webservco/simple-quiz",
+  "version": "1.0.0",
+  "description": "Simple JavaScipt quiz functionality.",
+  "main": "SimpleQuiz.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webservco/simple-quiz.git"
+  },
+  "keywords": [
+    "quiz"
+  ],
+  "author": "Radu Maier <ariademur@webserv.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webservco/simple-quiz/issues"
+  },
+  "homepage": "https://github.com/webservco/simple-quiz#readme",
   "devDependencies": {
     "browser-sync": "^2.26.14"
   }
