@@ -7,9 +7,9 @@ var quiz = (function() {
             // "sent" flag, prevents answering multiple times
             var sent = false;
             // The quiz HTML element.
-            var quizElement = document.querySelector('div.quiz[data-id="' + quizId + '"]');
+            var quizElement = document.querySelector('div[data-id="' + quizId + '"]');
             // The list of answer buttons.
-            var answerButtonList = quizElement.querySelectorAll('a.quiz-answer');
+            var answerButtonList = quizElement.querySelectorAll('[data-answer]');
             // The result HMML element.
             var resultElement = quizElement.querySelector('div.quiz-result');
             // The HTML elementw hich will display the selected answer.
