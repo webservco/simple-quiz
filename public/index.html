@@ -47,9 +47,11 @@
                 answerButtonList.forEach(function(answerButton) {
                     answerButton.addEventListener('click', (event) => {
                         if (sent) {
+                            // Quiz was already answered, stop.
                             return false;
                         }
                         var answer = event.target.dataset.answer;
+                        event.target.classList.add('active');
                         resultAnswer.textContent = answer;
                         resultElement.style.display = 'block';
                         sent = true;
