@@ -1,12 +1,14 @@
 var SimpleQuiz = (function() {
 
-    const handleExternalData = (answer, url, callback) => {
+    const handleExternalData = (elementId, answer, url, callback) => {
         // External data sending functionality.
         // Send the answer to an external URL.
         const promise = new Promise(
             (resolve, reject) => {
                 // Create a form element.
                 const formData = new FormData();
+                // Set the quiz id.
+                formData.append('id', elementId);
                 // Set the answer value.
                 formData.append('answer', answer);
                 // Fetch the extrnal url.
@@ -79,7 +81,7 @@ var SimpleQuiz = (function() {
                     sent = true
 
                     if (url) {
-                        handleExternalData(answer, url, callback)
+                        handleExternalData(elementId, answer, url, callback)
                     }
                 });
             });

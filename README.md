@@ -16,11 +16,13 @@ Simple JavaScipt quiz functionality.
 
 ```sh
 npm install
+
 # run
+browser-sync start --server 'src' --watch 'src'
 
-browser-sync start --server 'public' --watch 'public'
 # Clean everything and create production files in the `dist` folder:
-
 npm run build
+
 # Cleanup
+npm run clean
 ```
