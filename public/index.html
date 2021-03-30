@@ -14,7 +14,7 @@
     <h1>Quiz</h1>
 
     <!--Quiz HTML -->
-    <div data-id="quiz1">
+    <div id="quiz1">
         <div class="card">
             <h5 class="card-header">Quiz title</h5>
             <div class="card-body">
@@ -40,13 +40,13 @@
     <script crossorigin='anonymous' defer src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js' integrity='sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns'></script>
 
     <!--Quiz JavaScript -->
-    <script defer src="./js/quiz.js"></script>
+    <script defer src="./js/sipleQuiz.js"></script>
     <script type="text/javascript">
         //<![CDATA[
         (function() {
             window.addEventListener('load', function () {
                 // Call functionality
-                quiz.handle('quiz1');
+                simpleQuiz.handle('quiz1');
                 //quiz.handle('quiz1', 'https://ingraduland.webserv.co/api');
             });
         })();
