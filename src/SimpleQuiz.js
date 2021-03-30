@@ -1,6 +1,6 @@
 var SimpleQuiz = (function() {
 
-    const handleExternalData = (answer, url) => {
+    const handleExternalData = (answer, externalUrl, externalCallback) => {
         // External data sending functionality.
         // Send the answer to an external URL.
         const promise = new Promise(
@@ -11,25 +11,28 @@ var SimpleQuiz = (function() {
                 formData.append('answer', answer);
                 // Fetch the extrnal url.
                 fetch(
-                    url, {
+                    externalUrl, {
                         method: 'POST',
                         body: formData
                     }
                 ).then(
-                    response => {
-                        resolve(response);
-                    },
+                    response => response.json(),
                     reject => {
                         // Log the error
                         console.log(reject);
+                    }
+                ).then(
+                    data => {
+                        resolve(data)
                     }
                 );
             }
         );
         promise.then(
             result => {
-                // Log the result.
-                console.log(result);
+                if (externalCallback) {
+                    externalCallback(result);
+                }
             }
         ).catch(
             error => {
@@ -42,8 +45,9 @@ var SimpleQuiz = (function() {
     return {
         // Main functionality.
         // argument: "elementId", the id of the quiz (use the "data-id" attribute of the main HTML element).
-        // argument: "url" (optional), the address where to send the result.
-        handle: function(elementId, url) {
+        // argument: "externalUrl" (optional), an external address where to send the result.
+        // argument: "externalCallback" (optional) a callback which handles the result of external address call
+        handle: function(elementId, externalUrl, externalCallback) {
             // "sent" flag, prevents answering multiple times
             var sent = false
             // The quiz HTML element.
@@ -74,8 +78,8 @@ var SimpleQuiz = (function() {
                     // Set the "sent" flag.
                     sent = true
 
-                    if (url) {
-                        handleExternalData(answer, url)
+                    if (externalUrl) {
+                        handleExternalData(answer, externalUrl, externalCallback)
                     }
                 });
             });
