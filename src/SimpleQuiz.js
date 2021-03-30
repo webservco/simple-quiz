@@ -1,6 +1,6 @@
 var SimpleQuiz = (function() {
 
-    const handleExternalData = (answer, externalUrl, externalCallback) => {
+    const handleExternalData = (answer, url, callback) => {
         // External data sending functionality.
         // Send the answer to an external URL.
         const promise = new Promise(
@@ -11,7 +11,7 @@ var SimpleQuiz = (function() {
                 formData.append('answer', answer);
                 // Fetch the extrnal url.
                 fetch(
-                    externalUrl, {
+                    url, {
                         method: 'POST',
                         body: formData
                     }
@@ -30,8 +30,8 @@ var SimpleQuiz = (function() {
         );
         promise.then(
             result => {
-                if (externalCallback) {
-                    externalCallback(result);
+                if (callback) {
+                    callback(result);
                 }
             }
         ).catch(
@@ -45,9 +45,9 @@ var SimpleQuiz = (function() {
     return {
         // Main functionality.
         // argument: "elementId", the id of the quiz (use the "data-id" attribute of the main HTML element).
-        // argument: "externalUrl" (optional), an external address where to send the result.
-        // argument: "externalCallback" (optional) a callback which handles the result of external address call
-        handle: function(elementId, externalUrl, externalCallback) {
+        // argument: "url" (optional), an external address where to send the result.
+        // argument: "callback" (optional) a callback which handles the result of external address call
+        handle: function(elementId, url, callback) {
             // "sent" flag, prevents answering multiple times
             var sent = false
             // The quiz HTML element.
@@ -78,8 +78,8 @@ var SimpleQuiz = (function() {
                     // Set the "sent" flag.
                     sent = true
 
-                    if (externalUrl) {
-                        handleExternalData(answer, externalUrl, externalCallback)
+                    if (url) {
+                        handleExternalData(answer, url, callback)
                     }
                 });
             });

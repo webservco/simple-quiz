@@ -45,13 +45,13 @@
         //<![CDATA[
         (function() {
             window.addEventListener('load', function () {
-                const externalCallback = (data) => {
-                    console.log('promiseCallback')
+                const quizCallback = (data) => {
+                    console.log('quizCallback')
                     console.log(data);
                 }
                 // Call functionality
                 //SimpleQuiz.handle('quiz1');
-                SimpleQuiz.handle('quiz1', 'https://ingraduland.webserv.co/api/SimpleQuiz.php', externalCallback);
+                SimpleQuiz.handle('quiz1', 'https://ingraduland.webserv.co/api/SimpleQuiz.php', quizCallback);
             });
         })();
         //]]>
