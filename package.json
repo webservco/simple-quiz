@@ -1,6 +1,6 @@
 {
   "name": "@webservco/simple-quiz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple JavaScipt quiz functionality.",
   "main": "SimpleQuiz.js",
   "scripts": {
