@@ -14,15 +14,15 @@
     <h1>Quiz</h1>
 
     <!--Quiz HTML -->
-    <div id="quiz1">
+    <div id="quiz-test-1">
         <div class="card">
             <h5 class="card-header">Quiz title</h5>
             <div class="card-body">
                 <p class="card-text">Quiz description</p>
                 <ul class="list-group list-group-flush">
-                    <a class="list-group-item list-group-item-action" data-answer="a" role="button">Lorem</a>
-                    <a class="list-group-item list-group-item-action" data-answer="b" role="button">Ipsum</a>
-                    <a class="list-group-item list-group-item-action" data-answer="c" role="button">Dolor</a>
+                    <a class="list-group-item list-group-item-action" data-answer="1" role="button">Lorem</a>
+                    <a class="list-group-item list-group-item-action" data-answer="2" role="button">Ipsum</a>
+                    <a class="list-group-item list-group-item-action" data-answer="3" role="button">Dolor</a>
                 </ul>
             </div>
         </div>
@@ -45,12 +45,14 @@
         //<![CDATA[
         (function() {
             window.addEventListener('load', function () {
+                /*
                 const quizCallback = (data) => {
                     console.log('quizCallback')
                     console.log(data);
                 }
-                // Call functionality
-                SimpleQuiz.handle('quiz1');
+                SimpleQuiz.handle('quiz-test-1', 'https://example.com/api/quiz', quizCallback);
+                */
+                SimpleQuiz.handle('quiz-test-1');
             });
         })();
         //]]>
