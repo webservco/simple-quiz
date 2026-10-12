@@ -1,7 +1,7 @@
 {
   "name": "@webservco/simple-quiz",
   "version": "1.1.5",
-  "description": "Simple JavaScript quiz functionality.",
+  "description": "A JavaScript library. Turns an HTML block of answer buttons into a one-question quiz: the first click marks the answer, shows the result and can post it to a URL.",
   "main": "dist/SimpleQuiz.min.js",
   "scripts": {
     "build": "gulp build",
